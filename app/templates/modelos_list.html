@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <header>
+        <h1>Patrocars</h1>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <!-- <h2>Tem nada!!</h2> -->
+
+        {% for modelo in modelos %}
+            <ul>
+                <li>
+                    <h2>{{ modelo.nome }}</h2>
+                </li>
+            </ul>
+        {% endfor %}
+    </main>
+{% endblock %}

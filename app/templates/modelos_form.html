@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<form action="/modelos" method="POST">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required>
+    <br>
+    <label for="valor_referencia">Valor de Referência</label>
+    <input type="number" name="valor_referencia" id="valor_referencia" required>
+    <br>
+    <label for="motorizacao">Motorização</label>
+    <input type="number" name="motorizacao" id="motorizacao" required>
+    <br>
+    <label for="turbo">Turbo</label>
+    <input type="checkbox" name="turbo" id="turbo">
+    <br>
+    <label for="automatico">Automático</label>
+    <input type="checkbox" name="automatico" id="automatico">
+    <br>
+    <label for="montadora_id" >Montadora</label>
+    <input type="number" name="montadora_id" id="montadora_id" required>
+    <button type="submit">Enviar</button>
+</form>
+{% endblock %}
