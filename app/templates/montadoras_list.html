@@ -3,26 +3,24 @@
 {% block content %}
 <div class="card">
     <div class="card-header">
-        <h4>Lista de Modelos</h4>
+        <h4>Lista de Montadoras</h4>
     </div>
     <div class="card-body">
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Valor de Referência</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                {% for modelo in modelos %}
+                {% for montadora in montadoras %}
                 <tr>
-                    <td>{{ modelo.nome }}</td>
-                    <td>{{ modelo.valor_referencia }}</td>
+                    <td>{{ montadora.nome }}</td>
                     <td>
-                        <a href="/modelos/{{ modelo.id }}" class="btn btn-info btn-sm">Ver</a>
-                        <a href="/modelos/form/{{ modelo.id }}" class="btn btn-warning btn-sm">Editar</a>
-                        <form action="/modelos/{{ modelo.id }}" method="POST" style="display:inline;">
+                        <a href="/montadoras/{{ montadora.id }}" class="btn btn-info btn-sm">Ver</a>
+                        <a href="/montadoras/form/{{ montadora.id }}" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="/montadoras/delete/{{ montadora.id }}" method="POST" style="display:inline;">
                             <input type="hidden" name="_method" value="DELETE">
                             <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
                         </form>

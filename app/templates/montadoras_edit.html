@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Editar Montadora</h2>
+    <form action="/montadoras/form/{{ montadora.id }}" method="POST">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="nome" value="{{ montadora.nome }}" required>
+        </div>
+        <div class="form-group">
+            <label for="pais">País</label>
+            <input type="text" class="form-control" name="pais" id="pais" value="{{ montadora.pais }}" required>
+        </div>
+        <div class="form-group">
+            <label for="ano_fundacao">Ano de Fundação</label>
+            <input type="number" class="form-control" name="ano_fundacao" id="ano_fundacao" value="{{ montadora.ano_fundacao }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+    </form>
+</div>
+{% endblock %}

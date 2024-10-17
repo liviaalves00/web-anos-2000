@@ -10,9 +10,28 @@ router = APIRouter()
 templates = Jinja2Templates(directory='app/templates')
 
 # Criar um novo modelo de veículo
+from fastapi import Form
+
 @router.post("/modelos", response_model=schemas.modelo.ModeloVeiculoResponse)
-def create_modelo(modelo: schemas.modelo.ModeloVeiculoCreate, db: Session = Depends(get_db)):
+def create_modelo(
+    nome: str = Form(...),
+    valor_referencia: float = Form(...),
+    motorizacao: float = Form(...),
+    turbo: bool = Form(False),
+    automatico: bool = Form(False),
+    montadora_id: int = Form(...),
+    db: Session = Depends(get_db)
+):
+    modelo = schemas.modelo.ModeloVeiculoCreate(
+        nome=nome,
+        valor_referencia=valor_referencia,
+        motorizacao=motorizacao,
+        turbo=turbo,
+        automatico=automatico,
+        montadora_id=montadora_id
+    )
     return crud_modelo.create_modelo(db=db, modelo=modelo)
+
 
 # Listar todos os modelos de veículos com paginação
 @router.get("/modelos", response_model=list[schemas.modelo.ModeloVeiculoResponse])

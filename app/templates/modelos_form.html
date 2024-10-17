@@ -1,25 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %} 
-
-<form action="/modelos" method="POST">
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" required>
-    <br>
-    <label for="valor_referencia">Valor de Referência</label>
-    <input type="number" name="valor_referencia" id="valor_referencia" required>
-    <br>
-    <label for="motorizacao">Motorização</label>
-    <input type="number" name="motorizacao" id="motorizacao" required>
-    <br>
-    <label for="turbo">Turbo</label>
-    <input type="checkbox" name="turbo" id="turbo">
-    <br>
-    <label for="automatico">Automático</label>
-    <input type="checkbox" name="automatico" id="automatico">
-    <br>
-    <label for="montadora_id" >Montadora</label>
-    <input type="number" name="montadora_id" id="montadora_id" required>
-    <button type="submit">Enviar</button>
-</form>
+<div class="card">
+    <div class="card-header">
+        <h4>Criar Modelo</h4>
+    </div>
+    <div class="card-body">
+        <form action="/modelos" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" name="nome" id="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="valor_referencia">Valor de Referência</label>
+                <input type="number" class="form-control" name="valor_referencia" id="valor_referencia" required>
+            </div>
+            <div class="form-group">
+                <label for="motorizacao">Motorização</label>
+                <input type="number" class="form-control" name="motorizacao" id="motorizacao" required>
+            </div>
+            <div class="form-group">
+                <label for="turbo">Turbo</label>
+                <input type="checkbox" name="turbo" id="turbo">
+            </div>
+            <div class="form-group">
+                <label for="automatico">Automático</label>
+                <input type="checkbox" name="automatico" id="automatico">
+            </div>
+            <div class="form-group">
+                <label for="montadora_id">Montadora</label>
+                <input type="number" class="form-control" name="montadora_id" id="montadora_id" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
